@@ -81,7 +81,7 @@ button {
   border-right: 2px solid #C1C1C1;
   border-bottom: 2px solid #181818;
   border-left: 2px solid #181818;
-  box-shadow: 0px 0px 2px #030303, inset 0px -20px 1px rgba(75, 75, 75, 0.2);
+  box-shadow: 0px 0px 2px #030303, inset 0px -20px 1px rgba(75, 75, 75, 0.4);
 }
 
 button:active {
