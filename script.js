@@ -5,7 +5,7 @@ const result = document.querySelector('#result'),
       equals = document.querySelector('.equals'),
       clear = document.querySelector('#clear'),
       ce = document.querySelector('#ce');
-let ex = ''; // the expression string to be eval'd
+let ex = ''; 
 result.innerHTML = '0';
 
 
@@ -37,7 +37,7 @@ function clickO() {
 
 
 
-Array.from(num).forEach(function(element) { //назнач функцию всем числам и операция
+Array.from(num).forEach(function(element) { //назнач функцию всем числам и операциям
       element.addEventListener('click', clickN);
     });
 
