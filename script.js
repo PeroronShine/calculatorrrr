@@ -10,7 +10,7 @@ result.innerHTML = '0';
 
 
 
-function clickN() { // when we click on a number
+function clickN() { 
   if(!ex || typeof(ex) === 'number' || ex === '0') {
     expression.innerHTML = this.id;
     ex = this.id;
@@ -22,7 +22,7 @@ function clickN() { // when we click on a number
   checkLength(result.innerHTML);
 };
 
-function clickO() { // when we click on an operation
+function clickO() { 
   if(!ex) {
     return;
   }
@@ -37,7 +37,7 @@ function clickO() { // when we click on an operation
 
 
 
-Array.from(num).forEach(function(element) { // assign appropriate function to all numbers and operations
+Array.from(num).forEach(function(element) { //назнач функцию всем числам и операция
       element.addEventListener('click', clickN);
     });
 
@@ -45,15 +45,13 @@ Array.from(operation).forEach(function(element) {
       element.addEventListener('click', clickO);
     });
 
-// clear all on click
-clear.addEventListener('click', () => {
+clear.addEventListener('click', () => { //почистить все
   result.innerHTML = '';
   expression.innerHTML = '';
   ex = '';
 })
 
-// clear last entry on click
-ce.addEventListener('click', () => {
+ce.addEventListener('click', () => { //почистить последний ввод
   if (!expression.innerHTML.match(/=$/)) {
     
     expression.innerHTML = doCE(expression.innerHTML);
@@ -68,8 +66,7 @@ ce.addEventListener('click', () => {
   }
 })
 
-// calculate the whole thing
-equals.addEventListener('click', ()=> {
+equals.addEventListener('click', ()=> { //вычислить всю операцию
   if (!ex) {
     result.innerHTML = '0';
   } else {
@@ -79,7 +76,7 @@ equals.addEventListener('click', ()=> {
   }
 })
 
-function checkLength(arg) { // if we enter a number that's too long 
+function checkLength(arg) { //ввод длинного числа
   if (arg.toString().length > 14) {
     expression.innerHTML = 'number too long'.toUpperCase();
     result.innerHTML = '0';
@@ -87,7 +84,7 @@ function checkLength(arg) { // if we enter a number that's too long
   } 
 }
 
-function trim12(arg) { // if we calculate a number that's too long
+function trim12(arg) { // вывод длинного числа
   if (arg.toString().length > 14) {
     ex = parseFloat(arg.toPrecision(12));
     if (ex.toString().length > 14) { 
